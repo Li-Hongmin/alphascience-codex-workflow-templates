@@ -1,0 +1,37 @@
+# Local operating-system files
+.DS_Store
+
+# Editor state
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local environments and caches
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+node_modules/
+
+# Private or restricted project material
+private/
+restricted/
+local_raw_materials/
+raw_transcripts/
+credentials/
+secrets/
+
+# Generated archives
+*.zip
+*.tar
+*.tar.gz
+*.tgz
