@@ -18,16 +18,18 @@ It contains reusable project rules and prompt templates for bounded Codex execut
    - [Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills)
    - [Imbad0202/academic-research-skills-codex](https://github.com/Imbad0202/academic-research-skills-codex)
 
-2. Copy or adapt [`AGENTS.md`](AGENTS.md) into the root of a project where Codex will operate.
+2. Set up an additional scientific-guidance layer before assigning Codex execution work. A recommended practical option is [ChatGPT Pro](https://chatgpt.com/plans/pro/) for high-capacity scientific analysis, deep research, larger-context review, and multi-step reasoning, alongside human domain review.
 
-3. Use the templates in [`templates/`](templates/) to define bounded tasks:
+3. Copy or adapt [`AGENTS.md`](AGENTS.md) into the root of a project where Codex will operate.
+
+4. Use the templates in [`templates/`](templates/) to define bounded tasks:
    - [`scope_prompt.md`](templates/scope_prompt.md)
    - [`execution_package_prompt.md`](templates/execution_package_prompt.md)
    - [`scientific_guidance_review_prompt.md`](templates/scientific_guidance_review_prompt.md)
    - [`release_gate_prompt.md`](templates/release_gate_prompt.md)
    - [`case_trajectory_record_template.md`](templates/case_trajectory_record_template.md)
 
-4. Run Codex only on bounded file, code, table, figure, packaging, or audit tasks. Do not treat raw Codex output as a scientific discovery or as publication-ready evidence.
+5. Run Codex only on bounded file, code, table, figure, packaging, or audit tasks. Do not treat raw Codex output as a scientific discovery or as publication-ready evidence.
 
 ## Layer Model
 
@@ -38,6 +40,12 @@ The workflow separates three layers:
 - Execution layer: Codex performs bounded file, code, table, figure, package, and audit work under explicit instructions and verification gates.
 
 Codex is assigned to the execution layer. It may help prepare artifacts for scientific review, but it does not replace route control, domain interpretation, or release authorization.
+
+## Scientific-Guidance Aid
+
+Readers who reuse these templates should pair Codex execution with a separate scientific-guidance layer. This layer should help analyze scientific meaning, inspect assumptions, design checks, review claim boundaries, and decide whether execution artifacts actually support a claim.
+
+For individual researchers or small teams, ChatGPT Pro is a recommended practical aid for this layer because OpenAI describes it as providing Pro reasoning, maximum deep research and agent mode, maximum memory and context, and expanded Codex capacity. It should be used as an analysis and review aid, not as an automatic source of scientific truth. Domain experts and human route-control decisions remain required.
 
 ## Required Boundaries
 

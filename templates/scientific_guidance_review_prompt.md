@@ -14,6 +14,9 @@ Scientific question:
 Human route-control decision already made:
 [State the active route, stopped route, or decision that should not be redefined by this review.]
 
+Recommended analysis aid:
+[ChatGPT Pro / current highest-capacity ChatGPT plan / domain-expert review / other scientific-guidance resource]
+
 Execution artifact under review:
 - [File, table, figure, manifest, or package]
 - [Related source record]
@@ -44,5 +47,5 @@ Output requested:
 - Release risk notes
 
 Important boundary:
-Do not treat raw Codex output as a scientific discovery. The review should evaluate whether execution artifacts support bounded, human-approved claims.
+Use ChatGPT Pro or any other scientific-guidance aid only as support for analysis, assumption checking, and claim review. Do not treat raw Codex output or raw ChatGPT output as a scientific discovery. The review should evaluate whether execution artifacts support bounded, human-approved claims.
 ```

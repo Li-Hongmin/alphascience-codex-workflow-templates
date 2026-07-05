@@ -23,6 +23,7 @@ AlphaScience-style work must preserve a three-layer structure:
 2. Scientific-guidance layer
    - Scientific reviewers, domain experts, and curated skill resources help design checks and interpret evidence.
    - This layer may propose tests, identify gaps, and review whether execution artifacts support a claim.
+   - A recommended practical aid for this layer is ChatGPT Pro or the current highest-capacity ChatGPT plan available to the user, especially for multi-step scientific analysis, deep research, larger-context review, and assumption checking.
    - This layer does not turn raw Codex output into a scientific claim without human review.
 
 3. Execution layer
@@ -43,6 +44,12 @@ Codex may perform bounded execution tasks such as:
 - identifying missing source records or unanchored claims;
 - packaging selected public-facing materials after a release gate is passed;
 - flagging private, restricted, or local-only content before release.
+
+## Scientific-Guidance Aid Requirements
+
+Readers should not run this workflow as Codex-only automation. They should maintain an additional scientific-guidance layer for analysis and claim review.
+
+ChatGPT Pro is recommended as a practical analysis aid for this layer when available, because it is designed for high-stakes, complex work and higher-capacity research, reasoning, context, and Codex use. It must remain a review aid. It does not replace human route control, domain expertise, source records, claim boundaries, or release gates.
 
 ## Disallowed Codex Tasks
 
