@@ -14,22 +14,57 @@ It contains reusable project rules and prompt templates for bounded Codex execut
 
 ## Quick Start
 
-1. Install or import the supporting skill resources used by the workflow:
-   - [Yuan1z0825/nature-skills](https://github.com/Yuan1z0825/nature-skills)
-   - [Imbad0202/academic-research-skills-codex](https://github.com/Imbad0202/academic-research-skills-codex)
+Open Claude Code or Codex at the root of the project you want to configure. Copy the following prompt into the agent and let it install or adapt the workflow materials for that project.
 
-2. Set up an additional scientific-guidance layer before assigning Codex execution work. A recommended practical option is [ChatGPT Pro](https://chatgpt.com/plans/pro/) for high-capacity scientific analysis, deep research, larger-context review, and multi-step reasoning, alongside human domain review.
+```text
+You are bootstrapping AlphaScience-style Codex workflow rules into this project.
 
-3. Copy or adapt [`AGENTS.md`](AGENTS.md) into the root of a project where Codex will operate.
+Source repository:
+https://github.com/Li-Hongmin/alphascience-codex-workflow-templates
 
-4. Use the templates in [`templates/`](templates/) to define bounded tasks:
-   - [`scope_prompt.md`](templates/scope_prompt.md)
-   - [`execution_package_prompt.md`](templates/execution_package_prompt.md)
-   - [`scientific_guidance_review_prompt.md`](templates/scientific_guidance_review_prompt.md)
-   - [`release_gate_prompt.md`](templates/release_gate_prompt.md)
-   - [`case_trajectory_record_template.md`](templates/case_trajectory_record_template.md)
+Required supporting skill resources:
+- https://github.com/Yuan1z0825/nature-skills
+- https://github.com/Imbad0202/academic-research-skills-codex
 
-5. Run Codex only on bounded file, code, table, figure, packaging, or audit tasks. Do not treat raw Codex output as a scientific discovery or as publication-ready evidence.
+Goal:
+Install or import the supporting skill resources when the local agent environment supports skill installation. Then copy or adapt the AlphaScience workflow rules and prompt templates into this project.
+
+Before changing files:
+1. Inspect the current project root.
+2. Check whether AGENTS.md already exists.
+3. If AGENTS.md exists, do not overwrite it blindly. Merge the AlphaScience workflow rules into the existing project rules, preserving more specific local instructions.
+4. If templates/ already exists, add only the missing AlphaScience workflow templates or clearly report any naming conflict before changing it.
+
+Files to install or adapt from the source repository:
+- AGENTS.md
+- templates/scope_prompt.md
+- templates/execution_package_prompt.md
+- templates/scientific_guidance_review_prompt.md
+- templates/release_gate_prompt.md
+- templates/case_trajectory_record_template.md
+
+Scientific-guidance layer:
+Set up a separate scientific-guidance layer before assigning Codex execution work. A recommended practical option is ChatGPT Pro, alongside human domain review, for high-capacity scientific analysis, deep research, larger-context review, assumption checking, and multi-step reasoning.
+
+Execution boundary:
+Codex should be used only for bounded file, code, table, figure, package, manifest, and audit tasks. Do not treat raw Codex output or raw ChatGPT output as a scientific discovery or as publication-ready evidence.
+
+Required boundaries:
+- Preserve human route control.
+- Preserve claim boundaries.
+- Preserve source records.
+- Run a release gate before public or collaborator-facing output.
+- Do not expose private transcripts, local paths, credentials, restricted data, or controlled-access material.
+- Mark missing evidence as missing instead of inventing support.
+
+After installation:
+1. Report which files were created or merged.
+2. Report whether the two supporting skill resources were installed, imported, or only referenced.
+3. Confirm that no private transcript, local absolute path, credential, or restricted-data material was introduced.
+4. Suggest the first bounded execution task that should be run with the installed templates.
+```
+
+After bootstrapping, use the installed templates to define bounded execution packages. Codex should remain in the execution layer; scientific interpretation and release approval remain outside Codex.
 
 ## Layer Model
 
