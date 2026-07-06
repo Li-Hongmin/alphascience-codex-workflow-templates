@@ -124,6 +124,14 @@ Every execution report should include:
 - remaining gaps;
 - the recommended next bounded step.
 
+## Round Logging Rule
+
+Keep a per-round CSV log for projects that use this workflow. Use `templates/round_log_template.csv` as the header template, and create a project-local working log such as `logs/alphascience_round_log.csv`.
+
+After each agent round, append one row to the working log when doing so is safe and within the user's requested scope. The row should record the execution class, template used, files inspected or changed, verification result, evidence status after the round, remaining gaps, and the next bounded step.
+
+Do not put private transcripts, credentials, restricted data, or long local absolute paths in the CSV log. Use short artifact labels or release-safe relative paths where possible. If logging would expose private or restricted material, skip the row and report why.
+
 ## Next-Step Prompting Rule
 
 At the end of every task, Codex should tell the user what to do next in a bounded form. The recommendation should be based on the current evidence and release state, not on a desire to expand the project.
@@ -152,6 +160,7 @@ Use the templates in `templates/` as the operational forms for this protocol. Do
 - `templates/scientific_guidance_review_prompt.md`: use when an execution result needs scientific interpretation, claim-boundary review, route decision support, or expert review before the next Codex task.
 - `templates/release_gate_prompt.md`: use before any collaborator-facing, reviewer-facing, or public-facing release, including documentation, figures, packages, repositories, or manuscript-adjacent material.
 - `templates/case_trajectory_record_template.md`: use when a case needs a traceable route record that separates human route control, scientific guidance, Codex execution, source records, claim status, stopped routes, and release notes.
+- `templates/round_log_template.csv`: use as the header template for a project-local per-round log. Copy it to a working log path, such as `logs/alphascience_round_log.csv`, and append one row after each safe-to-log agent round.
 
 Template selection rule:
 
@@ -161,6 +170,7 @@ If the task is clear and bounded, use execution_package_prompt.md.
 If interpretation or claim sufficiency is needed, use scientific_guidance_review_prompt.md.
 If anything may be released externally, use release_gate_prompt.md.
 If the work concerns a case trajectory or stopped/partial route, use case_trajectory_record_template.md.
+For every completed round, append a row to the working CSV log derived from round_log_template.csv when safe.
 ```
 
 ## Scientific-Guidance Aid Requirements

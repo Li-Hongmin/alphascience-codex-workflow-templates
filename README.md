@@ -42,6 +42,7 @@ Files to install or adapt from the source repository:
 - templates/scientific_guidance_review_prompt.md
 - templates/release_gate_prompt.md
 - templates/case_trajectory_record_template.md
+- templates/round_log_template.csv
 
 Scientific-guidance layer:
 Set up a separate scientific-guidance layer before assigning Codex execution work. A recommended practical option is ChatGPT Pro, alongside human domain review, for high-capacity scientific analysis, deep research, larger-context review, assumption checking, and multi-step reasoning.
@@ -56,6 +57,7 @@ Required boundaries:
 - Run a release gate before public or collaborator-facing output.
 - Do not expose private transcripts, local paths, credentials, restricted data, or controlled-access material.
 - Mark missing evidence as missing instead of inventing support.
+- Keep a per-round CSV log. If the project does not already have one, create logs/alphascience_round_log.csv from templates/round_log_template.csv and append one row after each agent round.
 
 After installation:
 1. Report which files were created or merged.
@@ -92,18 +94,6 @@ Any project using these templates should preserve the following boundaries:
 - Privacy boundary: do not release private transcripts, local file paths, credentials, personal data, restricted data, or controlled-access materials.
 - Role boundary: do not describe Codex-generated execution artifacts as independent scientific discovery.
 
-## Code Availability Language
-
-Suggested manuscript wording:
-
-```tex
-No source code or standalone software package is released with this manuscript.
-Codex workflow-template materials and project-rule files used to document the
-analysed AlphaScience workflow are available at
-https://github.com/Li-Hongmin/alphascience-codex-workflow-templates. These
-materials are documentation and workflow templates, not executable source code.
-```
-
 ## Repository Contents
 
 ```text
@@ -114,6 +104,7 @@ materials are documentation and workflow templates, not executable source code.
     |-- case_trajectory_record_template.md
     |-- execution_package_prompt.md
     |-- release_gate_prompt.md
+    |-- round_log_template.csv
     |-- scientific_guidance_review_prompt.md
     `-- scope_prompt.md
 ```
